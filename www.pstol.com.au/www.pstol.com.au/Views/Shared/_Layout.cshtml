@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+ <!--<![endif]-->
+<head>
+    <title>Pandora Technology Solutions @ViewBag.Title</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="~/Plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/Style.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="~/Plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="~/Plugins/font-awesome/css/font-awesome.min.css">
+
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="~/Content/theme-colors/default.css" id="style_color">
+    <link rel="stylesheet" href="~/Content/theme-skins/dark.css">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="~/Content/custom.css">
+    @RenderSection("css", required: false)
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--=== Header ===-->
+        <div class="header">
+            <!-- Topbar -->
+            <div class="topbar">
+                <div class="container">
+                    <!-- Topbar Navigation -->
+                    <ul class="loginbar pull-right">
+                        <li><a href="/Account/Register">Register</a></li>
+                        <li class="topbar-devider"></li>
+                        <li><a href="/Account/Login">Login</a></li>
+                    </ul>
+                    <!-- End Topbar Navigation -->
+                </div>
+            </div>
+            <!-- End Topbar -->
+            <!-- Navbar -->
+            <div class="navbar navbar-default mega-menu" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="fa fa-bars"></span>
+                        </button>
+                        <a class="navbar-brand" href="~/Home">
+                            <img id="logo-header" src="~/Images/logo.png" title="Pandora Technology Solutions"  alt="Pandora Technology Solutions" border="0" />
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+                        <ul class="nav navbar-nav">
+                            <!-- Home -->
+                            <li class="active">
+                                <a href="~/Home">
+                                    Home
+                                </a>
+                            </li>
+                            <!-- End Home -->
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"> Galleries </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="~/Galleries/Logo-Design">Logo Design</a>
+                                    </li>
+                                    <li>
+                                        <a href="~/Galleries/Web-Site-Development">Web Site Development</a>
+                                    </li>
+                                    <li>
+                                        <a href="~/Galleries/Mobile-Application-Development">Mobile Application Development</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Contact Us -->
+                            <li>
+                                <a href="~/Contact-Us">
+                                    Contact Us
+                                </a>
+                            </li>
+                            <!-- End Contact Us -->
+
+                            <!-- Search Block -->
+                            <li>
+                                <i class="search fa fa-search search-btn"></i>
+                                <div class="search-open">
+                                    <div class="input-group animated fadeInDown">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                        <span class="input-group-btn">
+                                            <button class="btn-u" type="button">Go</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- End Search Block -->
+                        </ul>
+                    </div><!--/navbar-collapse-->
+                </div>
+            </div>
+            <!-- End Navbar -->
+        </div>
+        <!--=== End Header ===-->
+
+
+        @RenderBody()
+
+        <!--=== Footer Version 1 ===-->
+        <div class="footer-v1">
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <!-- About -->
+                        <div class="col-md-3 md-margin-bottom-40">
+                            <a href="/Home"><img id="logo-footer" class="footer-logo" src="~/Images/logo-small.png" alt="Pandora Technology Solutions" title="Pandora Technology Solutions"></a>
+                            <p>Pandora Technology Solutions is a web site development solution services run by a small team of very experience software engineers.</p>
+                            <p>We always try to give the best price of our services to our customers without loosing the quality of our works.</p>
+                        </div><!--/col-md-3-->
+                        <!-- End About -->
+                        <!-- Latest -->
+                        <div class="col-md-3 md-margin-bottom-40">
+                            <div class="posts">
+                                <div class="headline"><h2>Latest Blog Posts</h2></div>
+                                <ul class="list-unstyled latest-list">
+                                    <li>
+                                        <a href="#">Incredible content</a>
+                                        <div style="display:block;text-align:right;">
+                                            <small>May 8, 2014</small>
+                                        </div>                                        
+                                    </li>
+                                    <li>
+                                        <a href="#">Best shoots</a>
+                                        <div style="display:block;text-align:right;">
+                                            <small>May 8, 2014</small>
+                                        </div>  
+                                    </li>
+                                    <li>
+                                        <a href="#">New Terms and Conditions</a>
+                                        <div style="display:block;text-align:right;">
+                                            <small>May 8, 2014</small>
+                                        </div>  
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!--/col-md-3-->
+                        <!-- End Latest -->
+                        <!-- Link List -->
+                        <div class="col-md-3 md-margin-bottom-40">
+                            <div class="headline"><h2>Useful Links</h2></div>
+                            <ul class="list-unstyled link-list">
+                                <li><a href="~/Galleries/Logo-Design">Galleries</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="~/Contact-Us">Contact Us</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="~/Jobs">Jobs</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="~/About-Us">About Us</a><i class="fa fa-angle-right"></i></li>
+                            </ul>
+                        </div><!--/col-md-3-->
+                        <!-- End Link List -->
+                        <!-- Testimonial -->
+                        <div class="col-md-3 md-margin-bottom-40">
+                            <div class="posts">
+                                <div class="headline"><h2>Testimonials</h2></div>
+                                <ul class="list-unstyled latest-list">
+                                    <li>
+                                        <a href="#" style="display:block;font-style:italic;margin-bottom:5px;">"Great Works ! The cost is very competitive and fast delivery."</a>
+                                        <div style="display:block;text-align:right;">
+                                            <small><b>Tania</b></small>
+                                        </div>                                        
+                                    </li>
+                                    <li>
+                                        <a href="#" style="display:block;font-style:italic;margin-bottom:5px;">"I am a satisfied customer."</a>
+                                        <div style="display:block;text-align:right;">
+                                            <small><b>Joseph</b></small>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!--/col-md-3-->
+                        <!-- End Testimonial -->
+                    </div>
+                </div>
+            </div><!--/footer-->
+
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                2015 &copy; All Rights Reserved.
+                                <a href="/Documents/Privacy-Policy">Privacy Policy</a> | <a href="/Documents/Terms-of-Service">Terms of Service</a>
+                            </p>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="col-md-6">
+                            <ul class="footer-socials list-inline">
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
+                                        <i class="fa fa-skype"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest">
+                                        <i class="fa fa-pinterest"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dribbble">
+                                        <i class="fa fa-dribbble"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Social Links -->
+                    </div>
+                </div>
+            </div><!--/copyright-->
+        </div>
+        <!--=== End Footer Version 1 ===-->
+    </div><!--/wrapper-->
+    <!-- JS Global Compulsory -->
+    <script type="text/javascript" src="~/Plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Plugins/jquery/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="~/Plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- JS Implementing Plugins -->
+    <script type="text/javascript" src="~/Plugins/back-to-top.js"></script>
+
+    <!-- JS Customization -->
+    <script type="text/javascript" src="~/Scripts/custom.js"></script>
+    <!-- JS Page Level -->
+    <script type="text/javascript" src="~/Scripts/app.js"></script>
+
+
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+    <!--[if lt IE 9]>
+        <script src="~/Plugins/ResponseJS/respond.js"></script>
+        <script src="~/Plugins/Html5shiv/html5shiv.js"></script>
+        <script src="~/Plugins/placeholder-IE-fixes/placeholder-IE-fixes.js"></script>
+    <![endif]-->
+
+</body>
+</html>
