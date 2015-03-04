@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Register";
+}
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Register</h1>
+        <ul class="pull-right breadcrumb">
+            <li><span>Account</span></li>
+            <li class="active">Register</li>
+        </ul>
+    </div>
+</div>
+<!--=== End Breadcrumbs ===-->
+<!--=== Content Part ===-->
+<div class="container content" ng-app="appModule" ng-init="guid='@Html.Raw(ViewBag.GUID)'">
+    <div class="row margin-bottom-30" ng-controller="registerController">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <form id="contactForm" class="reg-page" role="form">
+                <div class="reg-header">
+                    <h2>Register a new account</h2>
+                </div>
+                <label>Title</label>
+                <select class="form-control" ng-options="item for item in titleoptions track by item" ng-model="title"></select>
+                <label>First Name</label>
+                <input type="text" class="form-control" ng-model="firstname" />
+                <label class="warning" ng-if="firstname_e != ''">{{firstname_e}}</label>
+                <label>Last Name</label>
+                <input type="text" class="form-control" ng-model="lastname" />
+                <label class="warning" ng-if="lastname_e != ''">{{lastname_e}}</label>
+                <label>Email Address</label>
+                <input type="text" class="form-control" ng-model="email" />
+                <label class="warning" ng-if="email_e != ''">{{email_e}}</label>
+                <hr/>
+                <label>Username</label>
+                <input type="text" class="form-control" ng-model="username" />
+                <label class="warning" ng-if="username_e != ''">{{username_e}}</label>
+                <label>Password</label>
+                <input type="password" class="form-control" ng-model="password" />
+                <label class="warning" ng-if="password_e != ''">{{password_e}}</label>
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" ng-model="conpassword" />
+                <label class="warning" ng-if="conpassword_e != ''">{{conpassword_e}}</label>
+                <hr/>
+                <label>Answer the question below:</label>
+                <div class="row margin-bottom-20">
+                    <div class="col-md-4">
+                        <img ng-src="{{urlcaptcha}}" alt="Security" title="Security" width="150" height="50" />
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" maxlength="6" class="form-control margin-top-15" name="captcha" id="captcha" ng-model="answer" />
+                        <input type="hidden" id="GUID" name="GUID" ng-model="guid" />
+                    </div>
+                    <div class="col-md-5">
+                        <label class="warning margin-top-20" ng-if="answer_e != ''">{{answer_e}}</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="agree" ng-true-value="true" ng-false-value="false" />
+                            I accept <a href="~/Documents/Terms-of-Service" class="color-green">Terms and Conditions</a>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-offset-6 col-lg-6 text-right">
+                        <button class="btn-u" type="submit" ng-disabled="!agree" ng-click="click()">Register</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div><!--/container-->
+<!--=== End Content Part ===-->
+@section Css {
+    <link href="~/Content/pages/login.css" rel="stylesheet" />
+    <link href="~/Scripts/custom/modalInfoController.css" rel="stylesheet" />
+    <style>
+        .warning {
+            display: block;
+        }
+    </style>
+}
+
+@section Scripts {
+    <script src="~/Scripts/custom/appModule.js"></script>
+    <script src="~/Scripts/custom/registerService.js"></script>
+    <script src="~/Scripts/custom/modalInfoController.js"></script>
+    <script src="~/Scripts/custom/registerController.js"></script>
+
+}

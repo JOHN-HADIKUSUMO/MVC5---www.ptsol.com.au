@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "New Password Confirmation";
+}
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Activation</h1>
+        <ul class="pull-right breadcrumb">
+            <li><span>Account</span></li>
+            <li class="active">Activation</li>
+        </ul>
+    </div>
+</div>
+<!--=== End Breadcrumbs ===-->
+<!--=== Content Part ===-->
+<div class="container content">
+    <div class="row margin-bottom-30">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <br />
+            <br/>   
+            <br/>
+            <br />
+            <br/>
+            <form id="contactForm" class="reg-page" role="form">
+                <div class="text-center">
+                    <h3>@Html.Raw(ViewBag.Message)</h3>
+                </div>
+            </form>
+            <br />
+            <br />
+            <br/>
+        </div>
+    </div>
+</div>
+</div><!--/container-->
+<!--=== End Content Part ===-->
+@section Css {
+    <link href="~/Content/pages/login.css" rel="stylesheet" />
+    <style>
+        .warning {
+            display: block;
+        }
+    </style>
+}
+
+@section Scripts {
+
+
+}

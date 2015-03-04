@@ -1,0 +1,129 @@
+﻿@{
+    ViewBag.Title = "Contact Us";
+}
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Contact Us</h1>
+        <ul class="pull-right breadcrumb">
+            <li><span>Galleries</span></li>
+            <li class="active">Contact Us</li>
+        </ul>
+    </div>
+</div>
+<!--=== End Breadcrumbs ===-->
+<!--=== Content Part ===-->
+<div class="container content" ng-app="appModule" ng-init="guid='@Html.Raw(ViewBag.GUID)'">
+    <div class="row margin-bottom-30" ng-controller="contactusController">
+        <div class="col-md-offset-2 col-md-8 mb-margin-bottom-30">
+            <form action="Contact-Us" method="post" name="contactForm" id="contactForm" class="sky-form sky-changes-3">
+                <fieldset>
+                    <div class="headline margin-bottom-45" style="text-align:center;">
+                        <h2>Contact Form</h2>
+                    </div>
+                    <div class="row">
+                        <section class="col col-6">
+                            <label class="label">Name</label>
+                            <label class="input">
+                                <i class="icon-append fa fa-user"></i>
+                                <input type="text" name="name" id="name" ng-model="name" />
+                                <label class="warning" ng-if="name_e != ''">{{name_e}}</label>
+                            </label>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col col-6">
+                            <label class="label">E-mail</label>
+                            <label class="input">
+                                <i class="icon-append fa fa-envelope-o"></i>
+                                <input type="text" name="email" id="email" ng-model="email" />
+                                <label class="warning" ng-if="email_e != ''">{{email_e}}</label>
+                            </label>
+                        </section>
+                    </div>
+
+                    <div class="row">
+                        <section class="col col-6">
+                            <label class="label">Mobile</label>
+                            <label class="input">
+                                <i class="icon-append fa fa-mobile"></i>
+                                <input type="text" name="mobile" id="mobile" ng-model="mobile" />
+                                <label class="warning" ng-if="mobile_e != ''">{{mobile_e}}</label>
+                            </label>
+                        </section>
+                    </div>
+
+                    <section>
+                        <label class="label">Subject</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-tag"></i>
+                            <input type="text" name="subject" id="subject" ng-model="subject" />
+                            <label class="warning" ng-if="subject_e != ''">{{subject_e}}</label>
+                        </label>
+                    </section>
+
+                    <section>
+                        <label class="label">Message</label>
+                        <label class="textarea">
+                            <i class="icon-append fa fa-comment"></i>
+                            <textarea rows="4" name="message" id="message" ng-model="message"></textarea>
+                            <label class="warning" ng-if="message_e != ''">{{message_e}}</label>
+                        </label>
+                    </section>
+                    <div class="row">
+                        <section class="col col-4">
+                            <label class="label">Answer the question below:</label>
+                            <img ng-src="{{urlcaptcha}}" alt="Security" title="Security" width="150" height="50" />
+                        </section>
+                        <section class="col col-2">
+                            <label class="label">&nbsp;</label>
+                            <label class="input input-captcha">
+                                <input type="text" maxlength="6" class="margin-top-15" name="captcha" id="captcha" ng-model="answer" />
+
+                                <input type="hidden" id="GUID" name="GUID" ng-model="guid" />
+                            </label>
+                        </section>
+                        <section class="col col-6">
+                            <label class="label">&nbsp;</label>
+                            <label class="input input-captcha margin-top-20">
+                                <label class="warning" ng-if="answer_e != ''">{{answer_e}}</label>
+                            </label>
+                        </section>
+                    </div>
+                    <section>
+                        <label class="checkbox label">
+                            <input type="checkbox" ng-model="sendemail" ng-true-value="true" ng-false-value="false" name="copy" />
+                            <i></i>
+                            Send a copy to my e-mail address
+                        </label>
+                    </section>
+                </fieldset>
+                <footer class="text-right">
+                    <button type="button" class="btn-u" ng-click="click()">Send message</button>
+                </footer>
+
+                <div class="message">
+                    <i class="rounded-x fa fa-check"></i>
+                    <p>Your message was successfully sent!</p>
+                </div>
+            </form>
+        </div><!--/col-md-9-->
+
+        <div class="col-md-3">
+
+        </div><!--/col-md-3-->
+    </div><!--/row-->
+</div><!--/container-->
+<!--=== End Content Part ===-->
+@section Css {
+    <link href="~/Content/pages/contactus.css" rel="stylesheet" />
+    <link href="~/Plugins/sky-forms/version-2.0.1/css/custom-sky-forms.css" rel="stylesheet" />
+    <link href="~/Scripts/custom/modalInfoController.css" rel="stylesheet" />
+}
+
+@section Scripts {
+    <script src="~/Scripts/custom/appModule.js"></script>
+    <script src="~/Scripts/custom/contactusService.js"></script>
+    <script src="~/Scripts/custom/modalInfoController.js"></script>
+    <script src="~/Scripts/custom/contactusController.js"></script>
+}

@@ -23,5 +23,8 @@
         <dependency id="Microsoft.Net.Http" version="2.2.13" />
       </group>
     </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Net.Http" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
   </metadata>
 </package>

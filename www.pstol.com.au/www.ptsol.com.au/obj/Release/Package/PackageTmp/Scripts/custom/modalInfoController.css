@@ -1,0 +1,21 @@
+﻿.modal-header
+{
+    background-color:#61b5a3;
+}
+
+    .modal-header .modal-title {
+        color:#ffffff;
+    }
+
+.btn
+{
+
+}
+
+.btn-primary {
+        background-color:#61b5a3;
+    }
+
+.btn-primary:hover {
+        background-color:#518075;
+    }

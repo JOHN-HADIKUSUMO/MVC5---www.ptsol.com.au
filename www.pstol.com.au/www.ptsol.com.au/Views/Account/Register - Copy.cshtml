@@ -1,0 +1,84 @@
+﻿@model www.ptsol.com.au.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Register</h1>
+        <ul class="pull-right breadcrumb">
+            <li><span>Account</span></li>
+            <li class="active">Register</li>
+        </ul>
+    </div>
+</div>
+<!--=== End Breadcrumbs ===-->
+<!--=== Content Part ===-->
+<div class="container content">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "reg-page", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="reg-header">
+                    <h2>Register a new account</h2>
+                    <p>Already Signed Up? Click <a href="page_login.html" class="color-green">Sign In</a> to login your account.</p>
+                </div>
+                <label>First Name <span class="color-red">*</span></label>
+                @Html.TextBoxFor(m => m.FirstName, new { @placeholder = "Firstname", @class = "form-control margin-bottom-20" })
+                @Html.ValidationMessageFor(m=> m.FirstName,"Firstname is required.")
+
+                <label>Last Name</label>
+                @Html.TextBoxFor(m => m.LastName, new { @placeholder = "Lastname", @class = "form-control margin-bottom-20" })
+
+                <label>Email Address <span class="color-red">*</span></label>
+                @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email", @class = "form-control margin-bottom-20" })
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label>Password <span class="color-red">*</span></label>
+                        @Html.PasswordFor(m => m.Password, new { @placeholder = "Password", @class = "form-control margin-bottom-20" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Confirm Password <span class="color-red">*</span></label>
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @placeholder = "Confirm Password", @class = "form-control margin-bottom-20" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img src="/Captcha/Show-Image/@Html.Raw(Model.Guid)" alt="Security" title="Security" width="150" height="45" />
+                        @Html.HiddenFor(m => m.Guid, new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(m => m.Answer, new { @placeholder = "Answer", @class = "form-control" })
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                    <div class="col-lg-6 checkbox">
+                        <label>
+                            @Html.CheckBoxFor(m=>m.Agree)
+                            I accept <a href="~/Documents/Terms-of-Service" class="color-green">Terms and Conditions</a>
+                        </label>
+                    </div>
+                    <div class="col-lg-6 text-right">
+                        <button class="btn-u" type="submit">Register</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div><!--/container-->
+<!--=== End Content Part ===-->
+@section Css {
+    <link href="~/Content/pages/login.css" rel="stylesheet" />
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            App.init();
+        });
+    </script>
+}
