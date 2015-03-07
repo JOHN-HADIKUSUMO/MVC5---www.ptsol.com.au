@@ -5,6 +5,7 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.ComponentModel.DataAnnotations;
+using www.ptsol.com.au.DAL.Models;
 using www.ptsol.com.au.Models;
 using www.ptsol.com.au.Models.REST;
 
@@ -67,7 +68,15 @@ namespace www.ptsol.com.au.DAL
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        public string Mobile { get; set; }
+        public string Telephone { get; set; }
+        public string Street1 { get; set; }
+        public string Street2 { get; set; }
+        public string Suburb { get; set; }
+        public string State { get; set; }
+        public string PostCode { get; set; }
         public bool IsConfirmed { get; set; }
+        public virtual ICollection<Testimonial> Testimonials { get; set; }
 
     }
 }

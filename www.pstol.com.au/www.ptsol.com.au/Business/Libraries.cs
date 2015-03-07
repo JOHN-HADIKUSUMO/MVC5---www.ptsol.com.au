@@ -12,6 +12,7 @@ namespace www.ptsol.com.au.Business
     {
         private ICaptchaLibrary captchas;
         private IUserLibrary users;
+        private ITestimonialLibrary testimonials;
 
         public ptsolDBContext Context { get; private set; }
         public Libraries(IDataContext datacontext)
@@ -19,8 +20,20 @@ namespace www.ptsol.com.au.Business
             this.Context = datacontext.GetEntity();
             this.captchas = new CaptchaLibrary(datacontext);
             this.users = new UserLibrary(datacontext);
+            this.testimonials = new TestimonialLibrary(datacontext);
         }
 
+        public ITestimonialLibrary Testimonials
+        {
+            get
+            {
+                return testimonials;
+            }
+            set
+            {
+                testimonials = value;
+            }
+        }
         public ICaptchaLibrary Captchas
         {
             get

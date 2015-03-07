@@ -15,5 +15,6 @@ namespace www.ptsol.com.au.Business.Interfaces
         ptsolDBContext Context { get; }
         ICaptchaLibrary Captchas { get; set; }
         IUserLibrary Users { get; set; }
+        ITestimonialLibrary Testimonials { get; set; }
     }
 }

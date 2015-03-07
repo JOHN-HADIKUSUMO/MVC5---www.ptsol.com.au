@@ -20,7 +20,6 @@
     $scope.reset = function () {
         $scope.title = '';
         $scope.username = '';
-        $scope.title = '';
         $scope.firstname = '';
         $scope.lastname = '';
         $scope.email = '';

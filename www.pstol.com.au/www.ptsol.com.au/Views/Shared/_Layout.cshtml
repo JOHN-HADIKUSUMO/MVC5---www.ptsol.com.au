@@ -208,18 +208,7 @@
                             <div class="posts">
                                 <div class="headline"><h2>Testimonials</h2></div>
                                 <ul class="list-unstyled latest-list">
-                                    <li>
-                                        <a href="#" style="display:block;font-style:italic;margin-bottom:5px;">"Great Works ! The cost is very competitive and fast delivery."</a>
-                                        <div style="display:block;text-align:right;">
-                                            <small><b>Tania</b></small>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#" style="display:block;font-style:italic;margin-bottom:5px;">"I am a satisfied customer."</a>
-                                        <div style="display:block;text-align:right;">
-                                            <small><b>Joseph</b></small>
-                                        </div>
-                                    </li>
+                                    @Html.Action("TopTwo", "Testimonials")
                                 </ul>
                             </div>
                         </div><!--/col-md-3-->
@@ -268,7 +257,7 @@
     <script type="text/javascript" src="~/Plugins/jquery/jquery-migrate.min.js"></script>
     <script type="text/javascript" src="~/Plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- JS Implementing Plugins -->
-    <script type="text/javascript" src="~/Plugins/back-to-top.js"></script>
+    <script type="text/javascript" src="~/Plugins/back-to-top/back-to-top.js"></script>
     <!-- JS Customization -->
     <script type="text/javascript" src="~/Scripts/custom.js"></script>
     <!-- JS Page Level -->

@@ -190,12 +190,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Business\TestimonialLibrary.cs" />
     <Compile Include="Business\CaptchaLibrary.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Business\DataContext.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Business\Interfaces\ITestimonialLibrary.cs" />
     <Compile Include="Business\Interfaces\ICaptchaLibrary.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -228,6 +230,7 @@
     <Compile Include="Controllers\HomeController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\TestimonialsController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
     <Compile Include="Controllers\REST\Base.cs" />
     <Compile Include="Controllers\REST\RegistrationController.cs" />
@@ -235,6 +238,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\Base.cs" />
+    <Compile Include="DAL\TestimonialService.cs" />
+    <Compile Include="DAL\Interfaces\ITestimonialService.cs" />
+    <Compile Include="DAL\Models\Testimonial.cs" />
     <Compile Include="DAL\UserService.cs" />
     <Compile Include="DAL\CaptchaService.cs" />
     <Compile Include="DAL\Interfaces\IUserService.cs" />
@@ -243,10 +249,11 @@
     <Compile Include="DAL\Models\Captcha.cs" />
     <Compile Include="DAL\ptsolDBContext.cs" />
     <Compile Include="DAL\ptsolUser.cs" />
-    <Compile Include="Migrations\201503040701183_Initial.cs" />
-    <Compile Include="Migrations\201503040701183_Initial.Designer.cs">
-      <DependentUpon>201503040701183_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201503060843302_initial.cs" />
+    <Compile Include="Migrations\201503060843302_initial.Designer.cs">
+      <DependentUpon>201503060843302_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\REST\inChangePasswordForm.cs" />
     <Compile Include="Models\REST\inNewPasswordForm.cs" />
     <Compile Include="Resources\Email.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -799,6 +806,10 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\custom\appModule.js" />
+    <Content Include="Scripts\custom\changePwdController.js" />
+    <Content Include="Scripts\custom\changePwdService.js" />
+    <Content Include="Scripts\custom\profileController.js" />
+    <Content Include="Scripts\custom\profileService.js" />
     <Content Include="Scripts\custom\resetConfirmationController.js" />
     <Content Include="Scripts\custom\resetConfirmationService.js" />
     <Content Include="Scripts\custom\resetController.js" />
@@ -868,10 +879,12 @@
     </Content>
     <Content Include="Views\Account\ConfirmedPassword.cshtml" />
     <Content Include="Views\Account\Activation.cshtml" />
-    <Content Include="Views\Account\Profile.cshtml" />
-    <Content Include="Views\Account\Register - Copy.cshtml" />
+    <Content Include="Views\Account\YourProfile.cshtml" />
     <Content Include="Views\Account\Invoices.cshtml" />
-    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Testimonials\TopTwo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -889,8 +902,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201503040701183_Initial.resx">
-      <DependentUpon>201503040701183_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503060843302_initial.resx">
+      <DependentUpon>201503060843302_initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Email.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -67,9 +67,8 @@ D:\Backup 2014-12-25\Website-Projects\www.ptsol.com.au\www.ptsol.com.au\bin\Micr
 D:\Backup 2014-12-25\Website-Projects\www.ptsol.com.au\www.ptsol.com.au\bin\Microsoft.Owin.Security.Google.xml
 D:\Backup 2014-12-25\Website-Projects\www.ptsol.com.au\www.ptsol.com.au\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Backup 2014-12-25\Website-Projects\www.ptsol.com.au\www.ptsol.com.au\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Backup 2014-12-25\Website-Projects\www.ptsol.com.au\www.ptsol.com.au\obj\Debug\www.ptsol.com.au.Migrations.initial.resources
 D:\Backup 2014-12-25\Website-Projects\www.ptsol.com.au\www.ptsol.com.au\obj\Debug\www.ptsol.com.au.Resources.Email.resources
 D:\Backup 2014-12-25\Website-Projects\www.ptsol.com.au\www.ptsol.com.au\obj\Debug\www.ptsol.com.au.csproj.GenerateResource.Cache
 D:\Backup 2014-12-25\Website-Projects\www.ptsol.com.au\www.ptsol.com.au\obj\Debug\www.ptsol.com.au.dll
 D:\Backup 2014-12-25\Website-Projects\www.ptsol.com.au\www.ptsol.com.au\obj\Debug\www.ptsol.com.au.pdb
-D:\Backup 2014-12-25\Website-Projects\www.ptsol.com.au\www.ptsol.com.au\obj\Debug\www.ptsol.com.au.Migrations.Initial.resources
-D:\Backup 2014-12-25\Website-Projects\www.ptsol.com.au\www.ptsol.com.au\obj\Debug\www.ptsol.com.au.csprojResolveAssemblyReference.cache

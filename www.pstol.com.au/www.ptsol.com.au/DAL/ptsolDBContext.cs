@@ -18,7 +18,15 @@ namespace www.ptsol.com.au.DAL
 
         }
 
+        public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<Captcha> Captchas { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            //modelBuilder.Entity<ptsolUser>().HasMany<Testimonial>(m => m.u);
+            modelBuilder.Conventions.Remove<PluralizingEntitySetNameConvention>();
+        }
     }
 }

@@ -34,6 +34,30 @@ namespace www.ptsol.com.au.Controllers.REST
         }
 
         [HttpPost]
+        [Route("CHANGE-PASSWORD")]
+        [Authorize(Roles="Customer")]
+        public HttpResponseMessage ChangePassword(inChangePasswordForm model)
+        {
+            PasswordHasher hasher = new PasswordHasher();
+            HttpResponseMessage response;
+
+            ptsolUser user = manager.FindByName(model.username);
+            if(user != null)
+            {
+                if(user.SecurityStamp.ToLower().Trim() == model.stamp.ToLower().Trim())
+                {
+                    user.PasswordHash = hasher.HashPassword(model.password);
+                    libraries.Users.Update(user);
+                }
+            }
+
+            response = Request.CreateResponse(HttpStatusCode.OK);
+            return response;
+        }
+
+
+
+        [HttpPost]
         [Route("RESET")]
         public HttpResponseMessage Reset(inResetForm model)
         {
@@ -83,6 +107,19 @@ namespace www.ptsol.com.au.Controllers.REST
                 return response;
             }
 
+        }
+
+        [HttpPost]
+        [Route("PROFILE/UPDATE")]
+        public HttpResponseMessage UpdateProfile(inRegistrationForm model)
+        {
+            HttpResponseMessage response;
+
+
+
+
+            response = Request.CreateResponse(HttpStatusCode.OK);
+            return response;
         }
 
         [HttpPost]

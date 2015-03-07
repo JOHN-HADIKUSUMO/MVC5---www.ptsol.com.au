@@ -28,13 +28,13 @@ namespace www.ptsol.com.au.Migrations
 
             RoleManager<IdentityRole> role = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
 
-            if (!role.RoleExists <IdentityRole>("Administrator"))
+            if (!role.RoleExists<IdentityRole>("Administrator"))
             {
                 role.Create<IdentityRole>(new IdentityRole("Administrator"));
 
                 if (manager.FindByName("Administrator") == null)
                 {
-                    string userid = library.Users.Create(new ptsolUser("administrator", "ptsol!@#$%^&*()_+", "Mr", "John", "Hadikusumo", "administrator@ptsol.com.au",true));
+                    string userid = library.Users.Create(new ptsolUser("administrator", "ptsol!@#$%^&*()_+", "Mr", "John", "Hadikusumo", "administrator@ptsol.com.au", true));
 
                     manager.AddToRole(userid, "Administrator");
                 }
@@ -44,6 +44,22 @@ namespace www.ptsol.com.au.Migrations
             if (!role.RoleExists<IdentityRole>("Customer"))
             {
                 role.Create<IdentityRole>(new IdentityRole("Customer"));
+
+
+                string userid_0 = library.Users.Create(new ptsolUser("tania", "ptsol!@#$%^&*()_+", "Miss", "Tannia", "Von Mantinez", "taniavman@ptsol.com.au", true));
+
+                manager.AddToRole(userid_0, "Customer");
+
+                Testimonial testimonial_0 = new Testimonial(userid_0, "Good works.");
+                library.Testimonials.Create(testimonial_0);
+
+
+                string userid_1 = library.Users.Create(new ptsolUser("bronsius", "ptsol!@#$%^&*()_+", "Mr", "Bronsius", "Sorbone", "bronsius@ptsol.com.au", true));
+
+                manager.AddToRole(userid_1, "Customer");
+
+                Testimonial testimonial_1 = new Testimonial(userid_1, "I had used their service to work on my web site. It was fantastic!");
+                library.Testimonials.Create(testimonial_1);
             }
 
             if (context.Captchas.Count() == 0)

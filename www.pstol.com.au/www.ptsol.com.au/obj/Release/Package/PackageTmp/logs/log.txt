@@ -1,1 +1,8 @@
-INFO  2015-03-03 20:31:41,021   177ms CaptchaController      .ctor              - testing
+INFO  2015-03-07 13:27:39,837   171ms CaptchaController      .ctor              - testing
+INFO  2015-03-07 13:32:25,703   172ms CaptchaController      .ctor              - testing
+INFO  2015-03-07 13:37:16,287   159ms CaptchaController      .ctor              - testing
+INFO  2015-03-07 13:40:14,096   156ms CaptchaController      .ctor              - testing
+INFO  2015-03-07 13:40:27,102 13161ms CaptchaController      .ctor              - testing
+INFO  2015-03-07 13:40:41,102 27161ms CaptchaController      .ctor              - testing
+INFO  2015-03-07 13:40:52,252 38312ms CaptchaController      .ctor              - testing
+INFO  2015-03-07 13:41:10,148 56208ms CaptchaController      .ctor              - testing

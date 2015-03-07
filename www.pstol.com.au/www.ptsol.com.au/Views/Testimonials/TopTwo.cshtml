@@ -1,0 +1,16 @@
+﻿@model List<www.ptsol.com.au.DAL.Models.Testimonial>
+
+@{
+    Layout = null;
+    foreach(www.ptsol.com.au.DAL.Models.Testimonial item in Model)
+    {
+        <TEXT>
+        <li>
+            <a href="#" style="display:block;font-style:italic;margin-bottom:5px;">@Html.Raw(item.Comment)</a>
+            <div style="display:block;text-align:right;">
+                <small><b>@Html.Raw(item.User.UserName)</b></small>
+            </div>
+        </li>
+        </TEXT>
+    }
+}

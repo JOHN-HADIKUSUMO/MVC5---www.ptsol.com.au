@@ -115,7 +115,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/25/2015 12:06:57</publishTime>
     </File>
     <File Include="bin/www.ptsol.com.au.dll">
-      <publishTime>03/03/2015 20:33:41</publishTime>
+      <publishTime>03/07/2015 13:42:39</publishTime>
     </File>
     <File Include="Content/app.css">
       <publishTime>02/21/2015 14:16:05</publishTime>
@@ -166,7 +166,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/03/2015 14:11:39</publishTime>
     </File>
     <File Include="Content/footers/footer-v7.css">
-      <publishTime>02/10/2015 14:57:21</publishTime>
+      <publishTime>03/04/2015 15:44:39</publishTime>
     </File>
     <File Include="Content/Header.css">
       <publishTime>02/04/2015 11:43:01</publishTime>
@@ -313,7 +313,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/01/2013 18:38:14</publishTime>
     </File>
     <File Include="Content/Style.css">
-      <publishTime>02/11/2015 16:27:52</publishTime>
+      <publishTime>03/04/2015 18:09:41</publishTime>
     </File>
     <File Include="Content/theme-colors/dark.css">
       <publishTime>02/10/2015 14:49:40</publishTime>
@@ -1294,12 +1294,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/20/2015 13:03:16</publishTime>
     </File>
     <File Include="logs/log.txt">
-      <publishTime>03/03/2015 20:31:50</publishTime>
+      <publishTime>03/07/2015 13:41:16</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>02/27/2015 13:09:24</publishTime>
     </File>
     <File Include="Plugins/back-to-top.js">
+      <publishTime>02/03/2015 13:18:53</publishTime>
+    </File>
+    <File Include="Plugins/back-to-top/back-to-top.css">
+      <publishTime>03/04/2015 15:33:53</publishTime>
+    </File>
+    <File Include="Plugins/back-to-top/back-to-top.js">
       <publishTime>02/03/2015 13:18:53</publishTime>
     </File>
     <File Include="Plugins/backstretch/jquery.backstretch.min.js">
@@ -1692,6 +1698,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/custom/appModule.js">
       <publishTime>02/24/2015 12:16:17</publishTime>
     </File>
+    <File Include="Scripts/custom/changePwdController.js">
+      <publishTime>03/05/2015 22:29:57</publishTime>
+    </File>
+    <File Include="Scripts/custom/changePwdService.js">
+      <publishTime>03/05/2015 15:27:22</publishTime>
+    </File>
     <File Include="Scripts/custom/contactusController.js">
       <publishTime>02/27/2015 14:52:56</publishTime>
     </File>
@@ -1707,8 +1719,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/custom/modalInfoController.js">
       <publishTime>03/02/2015 12:24:12</publishTime>
     </File>
+    <File Include="Scripts/custom/profileController.js">
+      <publishTime>03/05/2015 23:16:29</publishTime>
+    </File>
+    <File Include="Scripts/custom/profileService.js">
+      <publishTime>03/05/2015 22:57:33</publishTime>
+    </File>
     <File Include="Scripts/custom/registerController.js">
-      <publishTime>02/27/2015 14:50:15</publishTime>
+      <publishTime>03/05/2015 22:54:14</publishTime>
     </File>
     <File Include="Scripts/custom/registerService.js">
       <publishTime>02/26/2015 21:22:44</publishTime>
@@ -1794,6 +1812,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Account/Activation.cshtml">
       <publishTime>03/02/2015 16:27:14</publishTime>
     </File>
+    <File Include="Views/Account/ChangePassword.cshtml">
+      <publishTime>03/05/2015 21:25:25</publishTime>
+    </File>
     <File Include="Views/Account/ConfirmedPassword.cshtml">
       <publishTime>03/02/2015 10:51:14</publishTime>
     </File>
@@ -1803,11 +1824,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Account/ExternalLoginFailure.cshtml">
       <publishTime>02/10/2015 10:57:16</publishTime>
     </File>
+    <File Include="Views/Account/Invoices.cshtml">
+      <publishTime>03/05/2015 11:41:13</publishTime>
+    </File>
     <File Include="Views/Account/Login.cshtml">
       <publishTime>02/24/2015 15:57:56</publishTime>
     </File>
     <File Include="Views/Account/Manage.cshtml">
       <publishTime>02/10/2015 10:57:16</publishTime>
+    </File>
+    <File Include="Views/Account/Profile.cshtml">
+      <publishTime>03/05/2015 23:16:59</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
       <publishTime>02/27/2015 16:25:35</publishTime>
@@ -1817,6 +1844,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Views/Account/ResetPassword.cshtml">
       <publishTime>02/11/2015 21:02:58</publishTime>
+    </File>
+    <File Include="Views/Account/YourProfile.cshtml">
+      <publishTime>03/05/2015 23:16:59</publishTime>
     </File>
     <File Include="Views/Account/_ChangePasswordPartial.cshtml">
       <publishTime>02/10/2015 10:57:16</publishTime>
@@ -1870,10 +1900,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/11/2015 10:13:05</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>03/02/2015 21:56:53</publishTime>
+      <publishTime>03/06/2015 22:28:42</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>02/26/2015 11:01:26</publishTime>
+    </File>
+    <File Include="Views/Testimonials/TopTwo.cshtml">
+      <publishTime>03/06/2015 22:28:36</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>02/25/2015 12:06:53</publishTime>
@@ -1882,7 +1915,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/25/2015 12:06:53</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/03/2015 20:32:37</publishTime>
+      <publishTime>03/07/2015 13:42:40</publishTime>
     </File>
     <File Include="WebLocal.config">
       <publishTime>03/02/2015 10:42:45</publishTime>

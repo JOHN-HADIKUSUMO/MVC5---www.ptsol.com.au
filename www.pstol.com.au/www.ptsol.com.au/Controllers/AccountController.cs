@@ -158,16 +158,31 @@ namespace www.ptsol.com.au.Controllers
         }
 
         [Route("Your-Profile")]
-        public ActionResult Profile()
+        public ActionResult YourProfile()
         {
-            ViewBag.GUID = Guid.NewGuid().ToString();
+            ViewBag.Username = User.Identity.Name;
+
+            ptsolUser user = this.userManager.FindByName(User.Identity.Name);
+            if (user != null)
+            {
+                ViewBag.Title = user.Title;
+                ViewBag.Firstname = user.Firstname;
+                ViewBag.Lastname = user.Lastname;
+                ViewBag.Email = user.Email;
+            }
+
             return View();
         }
 
         [Route("Change-Password")]
         public ActionResult ChangePassword()
         {
-            ViewBag.GUID = Guid.NewGuid().ToString();
+            ptsolUser user = this.userManager.FindByName(User.Identity.Name);
+            if(user != null)
+            {
+                ViewBag.Username = user.UserName;
+                ViewBag.Stamp = user.SecurityStamp;
+            }
             return View();
         }
 

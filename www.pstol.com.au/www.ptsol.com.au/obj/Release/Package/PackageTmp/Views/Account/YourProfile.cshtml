@@ -1,0 +1,62 @@
+﻿@{
+    //ViewBag.Title = "Profile";
+}
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Your Profile</h1>
+        <ul class="pull-right breadcrumb">
+            <li><span>Account</span></li>
+            <li class="active">Your Profile</li>
+        </ul>
+    </div>
+</div>
+<!--=== End Breadcrumbs ===-->
+<!--=== Content Part ===-->
+<div class="container content" ng-app="appModule" ng-init="username='@Html.Raw(ViewBag.Username)';title='@Html.Raw(ViewBag.Title)';firstname='@Html.Raw(ViewBag.Firstname)';lastname='@Html.Raw(ViewBag.Lastname)';email='@Html.Raw(ViewBag.Email)'">
+    <div class="row margin-bottom-30" ng-controller="profileController">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <form id="contactForm" class="reg-page" role="form">
+                <div class="reg-header">
+                    <h2>Profile Form</h2>
+                </div>
+                <label>Title</label>
+                <select class="form-control" ng-options="item for item in titleoptions track by item" ng-model="title"></select>
+                <label>First Name</label>
+                <input type="text" class="form-control" ng-model="firstname" />
+                <label class="warning" ng-if="firstname_e != ''">{{firstname_e}}</label>
+                <label>Last Name</label>
+                <input type="text" class="form-control" ng-model="lastname" />
+                <label class="warning" ng-if="lastname_e != ''">{{lastname_e}}</label>
+                <label>Email Address</label>
+                <input type="text" class="form-control" ng-disabled="true" ng-model="email" />
+                <label class="warning" ng-if="email_e != ''">{{email_e}}</label>
+                <hr />
+                <div class="row">
+                    <div class="col-lg-offset-6 col-lg-6 text-right">
+                        <button class="btn-u" type="submit" ng-click="click()">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div><!--/container-->
+<!--=== End Content Part ===-->
+@section Css {
+    <link href="~/Content/pages/login.css" rel="stylesheet" />
+    <link href="~/Scripts/custom/modalInfoController.css" rel="stylesheet" />
+    <style>
+        .warning {
+            display: block;
+        }
+    </style>
+}
+
+@section Scripts {
+    <script src="~/Scripts/custom/appModule.js"></script>
+    <script src="~/Scripts/custom/modalInfoController.js"></script>
+    <script src="~/Scripts/custom/profileService.js"></script>
+    <script src="~/Scripts/custom/profileController.js"></script>
+
+}

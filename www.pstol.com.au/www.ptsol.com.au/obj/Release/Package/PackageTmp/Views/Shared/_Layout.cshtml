@@ -3,7 +3,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en">
- <!--<![endif]-->
+<!--<![endif]-->
 <head>
     <title>Pandora Technology Solutions @ViewBag.Title</title>
 
@@ -19,7 +19,7 @@
     <!-- CSS Global Compulsory -->
     <link rel="stylesheet" href="~/Plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/Content/Style.css">
-
+    <link rel="stylesheet" href="~/Plugins/back-to-top/back-to-top.css" />
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="~/Plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="~/Plugins/font-awesome/css/font-awesome.min.css">
@@ -58,7 +58,7 @@
                             <span class="fa fa-bars"></span>
                         </button>
                         <a class="navbar-brand" href="~/Home">
-                            <img id="logo-header" src="~/Images/logo.png" title="Pandora Technology Solutions"  alt="Pandora Technology Solutions" border="0" />
+                            <img id="logo-header" src="~/Images/logo.png" title="Pandora Technology Solutions" alt="Pandora Technology Solutions" border="0" />
                         </a>
                     </div>
 
@@ -88,13 +88,50 @@
                                 </ul>
                             </li>
                             <!-- Contact Us -->
-                            <li @Html.Raw(Request.RequestContext.RouteData.Values["controller"].ToString() == "ContactUs" ?@"class=""active""":"")>
+                            <li @Html.Raw(Request.RequestContext.RouteData.Values["controller"].ToString() == "ContactUs" ? @"class=""active""" : "")>
                                 <a href="~/Contact-Us">
                                     Contact Us
                                 </a>
                             </li>
+                            @if (Request.IsAuthenticated)
+                            {
+                                <text>
+                                    <li class="dropdown @Html.Raw(Request.RequestContext.RouteData.Values["controller"].ToString()=="Account"?"active":"")">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"> Account </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="~/Account/Your-Profile">Your Profile</a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Account/Change-Password">Change Password</a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Account/Your-Invoices">Your Invoices</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </text>
+                                if (User.IsInRole("Administrator"))
+                                {
+                                    <text>
+                                        <li class="dropdown @Html.Raw(Request.RequestContext.RouteData.Values["controller"].ToString()=="Manage"?"active":"")">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"> Manage </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a href="~/Manage/Your-Profile">Your Profile</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Manage/Change-Password">Change Password</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Manage/Your-Invoices">Your Invoices</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </text>
+                                }
+                            }
                             <!-- End Contact Us -->
-
                             <!-- Search Block -->
                             <li>
                                 <i class="search fa fa-search search-btn"></i>
@@ -115,8 +152,6 @@
             <!-- End Navbar -->
         </div>
         <!--=== End Header ===-->
-
-
         @RenderBody()
 
         <!--=== Footer Version 1 ===-->
@@ -139,19 +174,19 @@
                                         <a href="#">Incredible content</a>
                                         <div style="display:block;text-align:right;">
                                             <small>May 8, 2014</small>
-                                        </div>                                        
+                                        </div>
                                     </li>
                                     <li>
                                         <a href="#">Best shoots</a>
                                         <div style="display:block;text-align:right;">
                                             <small>May 8, 2014</small>
-                                        </div>  
+                                        </div>
                                     </li>
                                     <li>
                                         <a href="#">New Terms and Conditions</a>
                                         <div style="display:block;text-align:right;">
                                             <small>May 8, 2014</small>
-                                        </div>  
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -173,18 +208,7 @@
                             <div class="posts">
                                 <div class="headline"><h2>Testimonials</h2></div>
                                 <ul class="list-unstyled latest-list">
-                                    <li>
-                                        <a href="#" style="display:block;font-style:italic;margin-bottom:5px;">"Great Works ! The cost is very competitive and fast delivery."</a>
-                                        <div style="display:block;text-align:right;">
-                                            <small><b>Tania</b></small>
-                                        </div>                                        
-                                    </li>
-                                    <li>
-                                        <a href="#" style="display:block;font-style:italic;margin-bottom:5px;">"I am a satisfied customer."</a>
-                                        <div style="display:block;text-align:right;">
-                                            <small><b>Joseph</b></small>
-                                        </div>
-                                    </li>
+                                    @Html.Action("TopTwo", "Testimonials")
                                 </ul>
                             </div>
                         </div><!--/col-md-3-->
@@ -233,8 +257,7 @@
     <script type="text/javascript" src="~/Plugins/jquery/jquery-migrate.min.js"></script>
     <script type="text/javascript" src="~/Plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- JS Implementing Plugins -->
-    <script type="text/javascript" src="~/Plugins/back-to-top.js"></script>
-
+    <script type="text/javascript" src="~/Plugins/back-to-top/back-to-top.js"></script>
     <!-- JS Customization -->
     <script type="text/javascript" src="~/Scripts/custom.js"></script>
     <!-- JS Page Level -->

@@ -124,7 +124,7 @@
   padding: 0;
 }
 
-.copyright-section i.back-to-top {
+/*.copyright-section i.back-to-top {
   left: 50%;
   top: -35px;
   color: #555;
@@ -136,5 +136,20 @@
 }
 
 .copyright-section i.back-to-top:hover {
+  color: #61b5a3;
+}*/
+
+.copyright-section {
+  left: 50%;
+  top: -35px;
+  color: #555;
+  font-size: 20px;
+  background: #fff;
+  padding: 8px 10px;
+  margin-left: -15px;
+  position: absolute;
+}
+
+.copyright-section{
   color: #61b5a3;
 }
